@@ -1,15 +1,11 @@
 import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export default function Home() {
   return (
@@ -20,7 +16,7 @@ export default function Home() {
       </div>
 
       <div className="under-welcome">
-        Don't be scared to take your medicine anymore.
+        Don&apos;t be scared to take your medicine anymore.
       </div>
 
       <div className="signup">
