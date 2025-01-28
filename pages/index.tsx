@@ -1,22 +1,38 @@
 import Image from "next/image";
-// import { Geist, Geist_Mono } from "next/font/google";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
 
 
 export default function Home() {
   return (
     <div className="container">
-      <div className="welcome">
-        <Image src="/pilltime.svg" alt="" width={200} height={200} />
-        Welcome to PillTime!
+      <div className="text-2xl">
+        <Image src="/pilltime.svg" alt="" width={400} height={400} />
+        <div className="welcome hover:text-red-200">
+          Welcome to PillTime!
+        </div>
+  
       </div>
 
       <div className="under-welcome">
         Don&apos;t be scared to take your medicine anymore.
+
+          <div>
+
+            <svg
+                className="line"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 120 20"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0 10 Q30 0 60 10 T120 10"
+                    fill="none"
+                    stroke="black"
+                    strokeWidth="2"
+                  />
+            </svg>
+          
+          </div>
+
       </div>
 
       <div className="signup">
