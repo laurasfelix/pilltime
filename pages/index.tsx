@@ -1,7 +1,22 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 
 export default function Home() {
+  const router = useRouter();
+
+  const goToMain = () => {
+
+    router.push("/main");
+
+  };
+
+  const goLearn = () => {
+
+    router.push("/learn");
+
+  };
+
   return (
     <div className="container">
       <div className="text-2xl">
@@ -35,12 +50,12 @@ export default function Home() {
 
       </div>
 
-      <div className="signup">
-        <button> sign up </button>
+      <div className="try-button">
+        <button onClick={goToMain}> try it now! </button>
       </div>
 
-      <div className="signin">
-        <button> sign in </button>
+      <div className="learn-button">
+        <button onClick={goLearn}> learn more </button>
       </div>
 
       <div className="page-end">
@@ -50,3 +65,4 @@ export default function Home() {
     </div>
   );
 }
+
