@@ -39,24 +39,6 @@ export default function Home() {
       <div className="under-welcome">
         Don&apos;t be scared to take your medicine anymore.
 
-          <div>
-
-            <svg
-                className="line"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 120 20"
-                  preserveAspectRatio="none"
-                >
-                  <path
-                    d="M0 10 Q30 0 60 10 T120 10"
-                    fill="none"
-                    stroke="black"
-                    strokeWidth="2"
-                  />
-            </svg>
-          
-          </div>
-
       </div>
       </div>
 

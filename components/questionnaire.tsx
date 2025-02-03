@@ -75,7 +75,7 @@ const Questionnaire = ({
                         
                             
                                 <tr>
-                                    <td> <button className='td-item' onClick={addTimezone}> + </button> </td>
+                                    <td> <button className='td-item add-timezone'  onClick={addTimezone}> + </button> </td>
                                     <td> <input className='td-item td-body' type="text" placeholder="Paris"  onChange={updateCity}  value={currTimezone.name} /> </td>
                                     <td> <input className='td-item td-body' type="number" placeholder="20%" onChange={updateNumber} value={currTimezone.percentage}  step="20" /> </td>
                                 </tr>

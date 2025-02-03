@@ -122,6 +122,25 @@ body,html {
   left: 25%;
 }
 
+.submit:hover{
+  transform: scale(1.2);
+}
+
 .sleep-options{
   border: 2px solid #f66e6e;
+}
+
+.timezone-question:hover, .sleep-question:hover{
+  background-color: #f28444;
+  color:white;
+
+}
+
+.add-timezone{
+  background-color: #f66e6e;
+}
+
+.add-timezone:hover{
+  background-color: #f28444;
+  color: white;
 }
