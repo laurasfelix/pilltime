@@ -1,30 +1,40 @@
+import Questionnaire from "@/components/questionnaire";
 import Image from "next/image";
 import { useRouter } from "next/router";
-
+import { useState } from "react";
+import { Timezone } from "@/types/timezone";
 
 export default function Home() {
   const router = useRouter();
+  const [submitted, setSubmitted] = useState(false);
 
-  const goToMain = () => {
 
-    router.push("/main");
+  const [questionnaireData, setQuestionnaireData] = useState<{
+    timezones: Timezone[];
+    sleepTime: string;
+  }>({
+    timezones: [],
+    sleepTime: "",
+  });
 
+  const handleSubmit = () => {
+    console.log("submitted");
+    setSubmitted(true);
   };
 
-  const goLearn = () => {
-
-    router.push("/learn");
-
+  const handleDataChange = (data: { timezones: any[]; sleepTime: string }) => {
+    setQuestionnaireData(data);
   };
 
   return (
+    <div className="main-container">
     <div className="container">
       <div className="text-2xl">
-        <Image src="/pilltime.svg" alt="" width={400} height={400} />
-        <div className="welcome hover:text-red-200">
+        <Image src="/pilltime.svg" alt="pill time! written, logo of the website" width={400} height={400} />
+      </div>
+
+      <div className="welcome hover:text-red-200 text-2xl">
           Welcome to PillTime!
-        </div>
-  
       </div>
 
       <div className="under-welcome">
@@ -49,18 +59,30 @@ export default function Home() {
           </div>
 
       </div>
-
-      <div className="try-button">
-        <button onClick={goToMain}> try it now! </button>
       </div>
 
-      <div className="learn-button">
-        <button onClick={goLearn}> learn more </button>
-      </div>
+        {!submitted && <div className="questions">
+          <Questionnaire onDataChange={handleDataChange} onSubmit={handleSubmit}/>
+        </div>}
 
-      <div className="page-end">
-        owned by PillTime! LLC
-      </div>
+        {submitted && 
+        <div className="submitted">
+          <div className="submitted-text">
+            Thank you for submitting your information!
+          </div>
+          <div className="submitted-text">
+            We will get back to you soon.
+          </div>
+        </div> }
+
+
+        <div className="page-end">
+          owned by PillTime! LLC
+        </div>
+
+
+
+    
       
     </div>
   );
