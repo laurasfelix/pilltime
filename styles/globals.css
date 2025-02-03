@@ -98,6 +98,8 @@ body,html {
   display:flex;
   flex-direction: column;
   gap: 2vw 2vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .td-item{
@@ -128,6 +130,14 @@ body,html {
 
 .sleep-options{
   border: 2px solid #f66e6e;
+  width: 80%;
+}
+
+.sleep-options:focus{
+  background-color: white;
+  color:#f66e6e;
+  border-color: #f66e6e;
+  outline:none;
 }
 
 .timezone-question:hover, .sleep-question:hover{
@@ -143,4 +153,32 @@ body,html {
 .add-timezone:hover{
   background-color: #f28444;
   color: white;
+}
+
+.questions{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1vw 4vh;
+  padding: 0 10px 0 10px;
+  
+}
+.introduction{
+  padding: 1vh 1vh 1vh 1vh;
+  margin-top: 5vh;
+  display:flex;
+  flex-direction: column;
+  gap: 1vw 1vh;
+  background-color: #f28444;
+  color: white;
+} 
+
+.pilltime:hover{
+
+  transform: scale(1.1);
+
+}
+
+.first-text{
+  background-color: #f66e6e;
+  color: black;
 }

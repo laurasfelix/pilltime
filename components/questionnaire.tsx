@@ -89,8 +89,8 @@ const Questionnaire = ({
                 <div className='sleep-question'> 
                     when do you usually go to sleep?
                 </div>
-                <div className='sleep-options'>
-                    <select onChange={e => setSleepTime(e.target.value)}>
+              
+                    <select className='sleep-options' onChange={e => setSleepTime(e.target.value)}>
                         {options.map((option, index) => {
                             return (
                                 <option key={index} value={option.value} > {option.label} </option>
@@ -98,7 +98,6 @@ const Questionnaire = ({
                         })}
                     </select>
 
-                </div>
             </div>
 
             <div className="submit">

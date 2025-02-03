@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <div className="main-container">
     <div className="container">
-      <div className="text-2xl">
+      <div className="text-2xl pilltime">
         <Image src="/pilltime.svg" alt="pill time! written, logo of the website" width={400} height={400} />
       </div>
 
@@ -43,7 +43,39 @@ export default function Home() {
       </div>
 
         {!submitted && <div className="questions">
+          
+          <div className="first-half">
+          <div className="introduction">
+            <div className="question-text">
+              <span className="first-text text-2xl"> New to Pilltime?  </span>
+            </div>
+            <div className="question-text">
+              Pilltime is a service that helps frequent travelers manage their medication and the timing of it.
+            </div>
+
+            <div className="question-text">
+              We ask you some questions to find out the optimal time to take your medication!
+            </div>
+
+            <div className="question-text">
+              Ready? Let&apos;s get started!
+            </div>
+          </div>
+
+          <div>
+
           <Questionnaire onDataChange={handleDataChange} onSubmit={handleSubmit}/>
+
+          </div>
+
+          </div>
+
+          <div>
+
+        
+
+          </div>
+          
         </div>}
 
         {submitted && 
