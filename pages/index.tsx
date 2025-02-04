@@ -35,6 +35,12 @@ export default function Home() {
   return (
     <div className="main-container">
         <div className="container">
+          <div>
+            
+          </div>
+          <div>
+            
+          </div>
           <div className="text-2xl pilltime">
             <Image src="/pilltime.svg" alt="pill time! written, logo of the website" width={400} height={400} />
           </div>
@@ -43,6 +49,10 @@ export default function Home() {
           {!submitted && <div className="welcome hover:text-red-200 text-2xl">
               <button onClick={handleNewClick}> New to PillTime? </button>
           </div>}
+
+          <div>
+            
+          </div>
 
         </div>
 
@@ -64,20 +74,20 @@ export default function Home() {
 
             {clicked &&
           <div className="introduction">
-            <div className="question-text">
-              <span className="first-text text-2xl"> Welcome to Pilltime!  </span>
-            </div>
-            <div className="question-text">
-              Pilltime is a service that helps frequent travelers manage their medication and the timing of it.
-            </div>
+              <div className="question-text">
+                <span className="first-text text-2xl"> Welcome to Pilltime!  </span>
+              </div>
+              <div className="question-text">
+                Pilltime is a service that helps frequent travelers manage their medication and the timing of it.
+              </div>
 
-            <div className="question-text">
-              We ask you some questions to find out the optimal time to take your medication!
-            </div>
+              <div className="question-text">
+                We ask you some questions to find out the optimal time to take your medication!
+              </div>
 
-            <div className="question-text">
-              Ready? Let&apos;s get started!
-            </div>
+              <div className="question-text">
+                Ready? Let&apos;s get started!
+              </div>
           </div>
           }
 

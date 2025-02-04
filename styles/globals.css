@@ -16,6 +16,9 @@ body,html {
 
 .welcome {
     position: relative;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
   }
   
 .welcome::before {
@@ -37,9 +40,9 @@ body,html {
   min-width: 100vw;
   position: fixed;
   top: 0;
-  display:flex;
+  display:grid;
   gap: 5vw 5vh;
-  flex-direction: row;
+  grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -178,13 +181,17 @@ body,html {
   width: 50%;
   transform: translateX(+25%);
   transform: translateY(-25%);
- 
 } 
+.pilltime{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
 
 .pilltime:hover{
 
   transform: scale(1.1);
-
 }
 
 .first-text{
