@@ -157,10 +157,15 @@ body,html {
 
 .questions{
   display:grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1vw 4vh;
   padding: 0 10px 0 10px;
-  
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+
 }
 .introduction{
   padding: 1vh 1vh 1vh 1vh;
@@ -170,6 +175,10 @@ body,html {
   gap: 1vw 1vh;
   background-color: #f28444;
   color: white;
+  width: 50%;
+  transform: translateX(+25%);
+  transform: translateY(-25%);
+ 
 } 
 
 .pilltime:hover{

@@ -6,6 +6,13 @@ import { Timezone } from "@/types/timezone";
 
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
+  const [clicked, setClicked] = useState(false);
+
+  const handleNewClick = () =>{
+
+    setClicked(!clicked);
+
+  };
 
 
   const [questionnaireData, setQuestionnaireData] = useState<{
@@ -27,27 +34,38 @@ export default function Home() {
 
   return (
     <div className="main-container">
-    <div className="container">
-      <div className="text-2xl pilltime">
-        <Image src="/pilltime.svg" alt="pill time! written, logo of the website" width={400} height={400} />
-      </div>
+        <div className="container">
+          <div className="text-2xl pilltime">
+            <Image src="/pilltime.svg" alt="pill time! written, logo of the website" width={400} height={400} />
+          </div>
 
-      <div className="welcome hover:text-red-200 text-2xl">
-          Welcome to PillTime!
-      </div>
 
-      <div className="under-welcome">
-        Don&apos;t be scared to take your medicine anymore.
+          {!submitted && <div className="welcome hover:text-red-200 text-2xl">
+              <button onClick={handleNewClick}> New to PillTime? </button>
+          </div>}
 
-      </div>
-      </div>
+        </div>
 
-        {!submitted && <div className="questions">
+        {!submitted && 
+          <div className="questions">
           
-          <div className="first-half">
+            <div>
+            
+            </div>
+
+            <div>
+
+              <Questionnaire onDataChange={handleDataChange} onSubmit={handleSubmit}/>
+
+            </div>
+
+
+          <div>
+
+            {clicked &&
           <div className="introduction">
             <div className="question-text">
-              <span className="first-text text-2xl"> New to Pilltime?  </span>
+              <span className="first-text text-2xl"> Welcome to Pilltime!  </span>
             </div>
             <div className="question-text">
               Pilltime is a service that helps frequent travelers manage their medication and the timing of it.
@@ -61,22 +79,13 @@ export default function Home() {
               Ready? Let&apos;s get started!
             </div>
           </div>
-
-          <div>
-
-          <Questionnaire onDataChange={handleDataChange} onSubmit={handleSubmit}/>
+          }
 
           </div>
-
-          </div>
-
-          <div>
 
         
-
-          </div>
           
-        </div>}
+          </div>}
 
         {submitted && 
         <div className="submitted">
@@ -87,6 +96,8 @@ export default function Home() {
             We will get back to you soon.
           </div>
         </div> }
+
+        
 
 
         <div className="page-end">
