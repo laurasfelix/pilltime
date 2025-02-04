@@ -56,7 +56,7 @@ export default function Home() {
 
         </div> */}
 
-        {!submitted && 
+   
           <div className="questions">
 
             <div className="q1">
@@ -86,7 +86,17 @@ export default function Home() {
 
             <div className="q3">
 
-              <Questionnaire onDataChange={handleDataChange} onSubmit={handleSubmit}/>
+              {!submitted && <Questionnaire onDataChange={handleDataChange} onSubmit={handleSubmit}/>}
+
+              {submitted && 
+                <div className="submitted">
+                  <div className="submitted-text">
+                    Thank you for submitting your information!
+                  </div>
+                  <div className="submitted-text">
+                    We will get back to you soon.
+                  </div>
+                </div> }
 
             </div>
 
@@ -119,18 +129,7 @@ export default function Home() {
 
         
           
-          </div>}
-
-        {submitted && 
-        <div className="submitted">
-          <div className="submitted-text">
-            Thank you for submitting your information!
           </div>
-          <div className="submitted-text">
-            We will get back to you soon.
-          </div>
-        </div> }
-
         
 
 
