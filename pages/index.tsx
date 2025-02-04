@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <div className="main-container">
-        <div className="container">
+        {/* <div className="container">
           <div>
             
           </div>
@@ -54,23 +54,44 @@ export default function Home() {
             
           </div>
 
-        </div>
+        </div> */}
 
         {!submitted && 
           <div className="questions">
+
+            <div className="q1">
+            </div>
+
+            <div className="q2">
+            </div>
+
+          <div className="text-2xl pilltime q3">
+            <Image src="/pilltime.svg" alt="pill time! written, logo of the website" width={400} height={400} />
+          </div>
+
+
+          {!submitted && <div className="welcome hover:text-red-200 text-2xl q4">
+              <button onClick={handleNewClick}> New to PillTime? </button>
+          </div>} 
           
-            <div>
+            <div className="q5">
             
             </div>
 
-            <div>
+            <div className="q1">
+            </div>
+            
+            <div className="q2">
+            </div>
+
+            <div className="q3">
 
               <Questionnaire onDataChange={handleDataChange} onSubmit={handleSubmit}/>
 
             </div>
 
 
-          <div>
+          <div className="q4">
 
             {clicked &&
           <div className="introduction">
@@ -91,6 +112,9 @@ export default function Home() {
           </div>
           }
 
+          </div>
+
+          <div className="q5">
           </div>
 
         

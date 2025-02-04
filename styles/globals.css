@@ -34,20 +34,6 @@ body,html {
 
   }
 
-.container{
-  box-sizing: border-box;
-  min-height: 1vh;
-  min-width: 100vw;
-  position: fixed;
-  top: 0;
-  display:grid;
-  gap: 5vw 5vh;
-  grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-}
-
 .main-container{
   box-sizing: border-box;
   min-height: 100vh;
@@ -160,7 +146,7 @@ body,html {
 
 .questions{
   display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
   gap: 1vw 4vh;
   padding: 0 10px 0 10px;
   align-items: center;
@@ -178,7 +164,7 @@ body,html {
   gap: 1vw 1vh;
   background-color: #f28444;
   color: white;
-  width: 50%;
+  width: 100%;
   transform: translateX(+25%);
   transform: translateY(-25%);
 } 
