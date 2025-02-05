@@ -3,10 +3,13 @@ import Questionnaire from "@/components/questionnaire";
 import Image from "next/image";
 import { useState } from "react";
 import { Timezone } from "@/types/timezone";
+import { useRouter } from "next/router";
+import Hoverword from "@/components/hoverword";
 
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
   const [clicked, setClicked] = useState(false);
+  const router = useRouter();
 
   const handleNewClick = () =>{
 
@@ -32,59 +35,32 @@ export default function Home() {
     setQuestionnaireData(data);
   };
 
+  const refreshPage = () => {
+    router.reload();
+  };
+
   return (
     <div className="main-container">
-        {/* <div className="container">
-          <div>
-            
-          </div>
-          <div>
-            
-          </div>
+
+        
           <div className="text-2xl pilltime">
-            <Image src="/pilltime.svg" alt="pill time! written, logo of the website" width={400} height={400} />
+
+              <div className="logo">
+                <button onClick={refreshPage}> <Image src="/pilltime.svg" alt="pill time! written, logo of the website" width={400} height={400} /> </button>
+              </div>
+
+              <div className="welcome-container">
+                {!submitted && <div className="welcome hover:text-red-200">
+                    <button onClick={handleNewClick}> New to PillTime? </button>
+                </div>} 
+              </div>
+
           </div>
-
-
-          {!submitted && <div className="welcome hover:text-red-200 text-2xl">
-              <button onClick={handleNewClick}> New to PillTime? </button>
-          </div>}
-
-          <div>
-            
-          </div>
-
-        </div> */}
-
    
           <div className="questions">
 
-            <div className="q1">
-            </div>
 
-            <div className="q2">
-            </div>
-
-          <div className="text-2xl pilltime q3">
-            <Image src="/pilltime.svg" alt="pill time! written, logo of the website" width={400} height={400} />
-          </div>
-
-
-          {!submitted && <div className="welcome hover:text-red-200 text-2xl q4">
-              <button onClick={handleNewClick}> New to PillTime? </button>
-          </div>} 
-          
-            <div className="q5">
-            
-            </div>
-
-            <div className="q1">
-            </div>
-            
-            <div className="q2">
-            </div>
-
-            <div className="q3">
+            <div className="form-container">
 
               {!submitted && <Questionnaire onDataChange={handleDataChange} onSubmit={handleSubmit}/>}
 
@@ -101,31 +77,29 @@ export default function Home() {
             </div>
 
 
-          <div className="q4">
+            <div className="info-container">
 
-            {clicked &&
-          <div className="introduction">
-              <div className="question-text">
-                <span className="first-text text-2xl"> Welcome to Pilltime!  </span>
+          
+              <div className={`introduction ${clicked && !submitted ? "show" : ""}`}>
+                  <div className="question-text">
+                    <span className="first-text text-2xl hover:text-red-200"> Welcome to Pilltime!  </span>
+                  </div>
+                  <div className="question-text">
+                    <Hoverword word="Pilltime is a service that helps frequent travelers manage their medication and the timing of it." color="hover:text-stone-900 hover:bg-amber-400" />
+                  </div>
+
+                  <div className="question-text">
+                  <Hoverword word="We ask you some questions to find out the optimal time to take your medication!" color="hover:text-stone-900 hover:bg-amber-400" />
+                  </div>
+
+                  <div className="question-text">
+                  <Hoverword word="Ready? Let&apos;s get started!" color="hover:text-stone-900 hover:bg-amber-400" />
+                  </div>
               </div>
-              <div className="question-text">
-                Pilltime is a service that helps frequent travelers manage their medication and the timing of it.
-              </div>
+            
 
-              <div className="question-text">
-                We ask you some questions to find out the optimal time to take your medication!
-              </div>
+            </div>
 
-              <div className="question-text">
-                Ready? Let&apos;s get started!
-              </div>
-          </div>
-          }
-
-          </div>
-
-          <div className="q5">
-          </div>
 
         
           

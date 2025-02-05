@@ -22,15 +22,17 @@ body,html {
   }
   
 .welcome::before {
+   border: box-sizing;
     background-color: #f28444;
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
     left: 0%;
-    bottom: 0%;
+    top: 0%;
     z-index: -1;
     transform: rotate(-2deg);
+    transition: transform 0.2s ease-in-out;
 
   }
 
@@ -61,17 +63,6 @@ body,html {
   }
 }
 
-.learn-button{
-  width: 20%;
-  border: 2px solid #f28444;
-
-}
-
-.try-button{
-  width: 20%;
-  border: 2px solid #f66e6e;
-}
-
 .page-end{
   position: fixed;
   bottom:5%;
@@ -91,18 +82,24 @@ body,html {
   align-items: center;
 }
 
-.td-item{
+td {
   border: 2px solid #f66e6e;
+  text-align: center;
+}
+
+.plus{
+  border: none;
 }
 
 .td-body{
   width:80%;
+ 
 }
 
 .timezone-table input,
 .timezone-table button {
   width: 100%; 
-  box-sizing: border-box;
+  
 }
 
 .submit{
@@ -138,6 +135,8 @@ body,html {
 .add-timezone{
   background-color: #f66e6e;
 }
+ 
+
 
 .add-timezone:hover{
   background-color: #f28444;
@@ -146,36 +145,54 @@ body,html {
 
 .questions{
   display:grid;
-  grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 3fr 2fr 1fr;
   gap: 1vw 4vh;
   padding: 0 10px 0 10px;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   text-align: center;
-  width: 100vw;
-  height: 100vh;
-
+  width: 100%;
 }
 .introduction{
+  box-sizing: border-box;
   padding: 1vh 1vh 1vh 1vh;
   margin-top: 5vh;
   display:flex;
   flex-direction: column;
-  gap: 1vw 1vh;
+  gap: 1vh 1vh;
   background-color: #f28444;
   color: white;
   width: 100%;
-  transform: translateX(+25%);
-  transform: translateY(-25%);
-} 
+  transform: scaleY(0); 
+  transform-origin: top; 
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  visibility: hidden;  
+  opacity: 0;
+}
+
+.introduction.show {
+  transform: scaleY(1); 
+  visibility: visible;
+  opacity: 1;
+}
 .pilltime{
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr 3fr 2fr 1fr;
   justify-content: center;
   text-align: center;
   align-items: center;
+  position:absolute;
+  padding: 0 10px 0 10px;
+  gap: 1vw 4vh;
+  top:0;
+  left:0;
+  right:0;
+  width: 100%; 
+  z-index: 10;
 }
 
-.pilltime:hover{
+
+.logo:hover{
 
   transform: scale(1.1);
 }
@@ -183,4 +200,45 @@ body,html {
 .first-text{
   background-color: #f66e6e;
   color: black;
+}
+
+.welcome-container{
+  grid-row: 1;
+  grid-column: 4;
+}
+
+.info-container{
+  grid-row: 1;
+  grid-column: 4;
+}
+
+.form-container{
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.logo{
+  grid-row: 1;
+  grid-column: 3;
+  display: flex;
+  justify-content: center;
+
+}
+
+.hoverletter{
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.hoverword{
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.hoverphrase{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.2rem;
 }
