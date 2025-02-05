@@ -85,6 +85,7 @@ body,html {
 td {
   border: 2px solid #f66e6e;
   text-align: center;
+  padding:0;
 }
 
 .plus{
